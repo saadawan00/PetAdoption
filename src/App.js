@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import SearchParams from "./SearchParams";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Results from "./Results";
 
 const App = () => {
@@ -9,8 +9,10 @@ const App = () => {
     <BrowserRouter>
       <div>
         <h1>Adopt me!</h1>
-        <Route path="/" component={SearchParams} />
-        <Route path="/results" component={Results} />
+        <Switch>
+          <Route path="/" component={SearchParams} />
+          <Route path="/results" component={Results} />
+        </Switch>
       </div>
     </BrowserRouter>
   );
